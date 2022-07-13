@@ -1,0 +1,1 @@
+# Easy way to create DDD concept in dotnet
