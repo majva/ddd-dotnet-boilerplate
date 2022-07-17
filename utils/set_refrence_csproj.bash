@@ -13,7 +13,7 @@ function set_ref() {
     if [ "$proj_name" == "Infrastructure" ]; then
         newtext="
     <ItemGroup>
-        <ProjectReference Include=\"..\\\\${2}.Domain\\\\${domainfile}.Domain.csproj\" />
+        <ProjectReference Include=\"..\\\\${2}.Domain\\\\${2}.Domain.csproj\" />
     </ItemGroup>
 </Project>
         "
