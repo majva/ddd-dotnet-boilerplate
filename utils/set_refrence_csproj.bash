@@ -25,6 +25,11 @@ function set_ref() {
         "
         printf "$newtext" >> $1/$filename.csproj
         dotnet add $1/$filename.csproj package Rimple.Abstractions
+    elif [ "$proj_name" == "Contract" ]; then
+        newtext="
+</Project>
+        "
+        printf "$newtext" >> $1/$filename.csproj
     elif [ "$proj_name" == "Core" ]; then
             newtext="
     <ItemGroup>
