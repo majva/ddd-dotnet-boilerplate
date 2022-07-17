@@ -21,6 +21,10 @@ function set_ref() {
         dotnet add $1/$filename.csproj package Rimple.EfCore
     elif [ "$proj_name" == "Domain" ]; then
         newtext="
+    <ItemGroup>
+      <Folder Include=\"Aggregates\" />
+      <Folder Include=\"Models\" />
+    </ItemGroup>
 </Project>
         "
         printf "$newtext" >> $1/$filename.csproj
@@ -36,6 +40,10 @@ function set_ref() {
         <ProjectReference Include=\"..\\\\${2}.Contracts\\\\${2}.Contracts.csproj\" />
         <ProjectReference Include=\"..\\\\${2}.Infrastructure\\\\${2}.Infrastructure.csproj\" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include=\"Jobs\" />
+      <Folder Include=\"Services\" />
+    </ItemGroup>
 </Project>
         "
         printf "$newtext" >> $1/$filename.csproj
@@ -43,6 +51,10 @@ function set_ref() {
             newtext="
     <ItemGroup>
         <ProjectReference Include=\"..\\\\${2}.Core\\\\${2}.Core.csproj\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include=\"Controllers\" />
+      <Folder Include=\"Consumers\" />
     </ItemGroup>
 </Project>
         "
